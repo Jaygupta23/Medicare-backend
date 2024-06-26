@@ -42,9 +42,9 @@ app.use(express.static(buildPath))
 //     res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // })
 
-app.use("/", (req, res) => {
-    res.send("<h1>Welcome to ecommerce app</h1>");
-});
+// app.use("/", (req, res) => {
+//     res.send("<h1>Welcome to ecommerce app</h1>");
+// });
 
 //PORT
 const PORT = process.env.PORT || 8000;
