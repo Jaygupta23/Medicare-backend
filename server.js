@@ -16,7 +16,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const buildPath = path.join(__dirname,"../project/build")
-console.log(buildPath)
 //configure env
 dotenv.config()
 
@@ -37,11 +36,11 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes)
 app.use("/api/v1/product", productRoutes)
 app.use("/static", express.static(__dirname + '/uploads'));
-// app.use(express.static(buildPath))
+app.use(express.static(buildPath))
 // rest api
 app.use("*", function (req, res) {
-    res.sendFile( 'project/build/index.html');
-})
+    res.sendFile(path.join( "../project/build/index.html"));
+});
 
 // app.use("/", (req, res) => {
 //     res.send("<h1>Welcome to ecommerce app</h1>");
