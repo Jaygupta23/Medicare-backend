@@ -23,7 +23,7 @@ export const createProductController = async (req, res) => {
         const { name, description, price, category, quantity, shipping } = req.body;
         const photo = req.file_name;
         const url = `${process.env.BACKEND_URL}/static/`;
-
+        console.log(url,"----------------")
         // validation
         switch (true) {
             case !name:
