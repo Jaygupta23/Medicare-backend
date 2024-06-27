@@ -22,7 +22,7 @@ export const createProductController = async (req, res) => {
     try {
         const { name, description, price, category, quantity, shipping } = req.body;
         const photo = req.file_name;
-        const url = "http://localhost:8000/static/";
+        const url = "http://process.env.BACKEND_URL/static/";
 
         // validation
         switch (true) {
@@ -113,7 +113,7 @@ export const updateProductController = async (req, res) => {
 
         const { name, description, price, category, quantity, shipping } = req.body;
         const photo = req.file_name;
-        const url = "http://localhost:8000/static/";
+        const url = "http://process.env.BACKEND_URL/static/"; 
         console.log(req.file_name,"photo")
         // validation
         switch (true) {
